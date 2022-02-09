@@ -1,0 +1,24 @@
+.form {
+  width: 100%;
+}
+
+form {
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  width: max-content;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow:
+  3.6px 3.5px 3.6px rgba(0, 0, 0, 0.115),
+  9.9px 9.8px 10px rgba(0, 0, 0, 0.165),
+  23.8px 23.5px 24.1px rgba(0, 0, 0, 0.215),
+  79px 78px 80px rgba(0, 0, 0, 0.33)
+;
+}
+
+span {
+  border: 2px solid black;
+  margin: 4px;
+  padding: 3px;
+}
