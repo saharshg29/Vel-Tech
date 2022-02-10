@@ -2,14 +2,39 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./signin.css";
-import M from "materialize-css";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassWord] = useState("");
   const Data = { email, password };
+  const navigate = useNavigate();
 
-  const onSubmission = (e) => {
+  const postData = () => {
+    if (!email || !password) {
+      console.log("Enter all the details");
+    }
+
+    fetch("/student-signin", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        password,
+        email,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          console.log(data.error);
+        } else {
+          localStorage.setItem("jwt", data.toke);
+          localStorage.setItem("user", JSON.stringify(data.user));
+        }
+        console.log("Sign in Sucessfull");
+        navigate('/signup')
+      });
     console.log("form submitted with data", Data);
   };
 
@@ -51,7 +76,7 @@ export default function SignIn() {
         <button
           type="submit"
           className="btn btn-primary"
-          onClick={() => onSubmission()}
+          onClick={() => postData()}
         >
           Submit
         </button>
