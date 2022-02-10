@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
 const Student = mongoose.model("Student")
+const Teachers = mongoose.model("Teachers")
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -39,7 +40,7 @@ router.post('/signup', (req, res) => {
     }
 })
 
-router.post('/signin', (req, res) => {
+router.post('/student-signin', (req, res) => {
     const { email, password } = req.body
     console.log("log in deails", req.body)
     if (!email || !password) {
@@ -50,13 +51,44 @@ router.post('/signin', (req, res) => {
     Student.findOne({ email: email })
         .then(savedStudent => {
             if (!savedStudent) {
-                res.status(400).json({ err: "Student does not exist" })
+                res.status(400).json({ err: "User does not exist" })
             }
             bcrypt.compare(password, savedStudent.password)
                 .then(doMatch => {
                     if (doMatch) {
                         const token = jwt.sign({ _id: savedStudent._id }, 'JWT_TOKEN')
-                        const { _id, name, email, followers, following } = savedStudent
+                        const { _id, name, email } = savedStudent
+                        res.json({ token, student: { _id, name, email } })
+                    }
+                    else {
+                        return res.status(422).json({ error: "Invalid Email or passwoord" })
+                    }
+                })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+})
+
+
+router.post('/teacher-signin', (req, res) => {
+    const { email, password } = req.body
+    console.log("log in deails", req.body)
+    if (!email || !password) {
+        console.log('email', email)
+        return res.json({ error: "email or password is wrong" })
+    }
+
+    Teachers.findOne({ email: email })
+        .then(savedTeacher => {
+            if (!savedTeacher) {
+                res.status(400).json({ err: "User does not exist" })
+            }
+            bcrypt.compare(password, savedTeacher.password)
+                .then(doMatch => {
+                    if (doMatch) {
+                        const token = jwt.sign({ _id: savedTeacher._id }, 'JWT_TOKEN')
+                        const { _id, name, email } = savedTeacher
                         res.json({ token, student: { _id, name, email } })
                     }
                     else {

@@ -15,18 +15,14 @@ const TeachersSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    DOB: {
-        type: Date,
-        required: true,
-    },
-    ScholarNumber: {
+    Department: [{
         type: String,
-        required: true,
-    },
-    // mentor: {
-    //     type: ObjectId,
-    //     ref: Teachers
-    // }
+        required: true
+    }],
+    Designation: [{
+        type: String,
+        required: true
+    }]
 })
 
 mongoose.model("Teachers", TeachersSchema)

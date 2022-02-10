@@ -9,13 +9,13 @@ import Footer from "./Components/Screen/Footer/Footer";
 function App() {
   return (
     <div className="App">
-      <div className="sticky-top">
+      <div className="sticky-top mb-2">
         <Navbar />
       </div>
 
       <div className="container-fluid m">
         <div className="row">
-          <div className="col-md bg-primary">
+          <div className="col-md bg-primary mr-1">
             this is Left navigation panel{" "}
           </div>
           <div className="col-md-8 ">
@@ -24,7 +24,7 @@ function App() {
               <Route exact path="/signin" element={<SignIn />}></Route>
             </Routes>
           </div>
-          <div className="col-md bg-primary">
+          <div className="col-md bg-primary ml-1">
             This is Right navigation panel
           </div>
         </div>
