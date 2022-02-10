@@ -6,9 +6,9 @@ export default function Navbar() {
   const navigate = useNavigate();
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand text-white" href="#">
             Navbar
           </a>
           <button
@@ -25,7 +25,7 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <span className="nav-link active" aria-current="page" href="#">
+                <span className="nav-link text-white" aria-current="page" href="#">
                   <NavLink to="/signup" end>
                     Sign-Up
                   </NavLink>

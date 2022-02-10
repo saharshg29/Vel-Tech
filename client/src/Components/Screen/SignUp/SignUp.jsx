@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./app.css";
 
 export default function SignUp() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassWord] = useState("");
@@ -12,24 +12,25 @@ export default function SignUp() {
   const Data = { name, email, password };
 
   const onSubmission = (e) => {
-    e.preventDefault();
     console.log("form submitted with data", Data);
-    navigate('/signin')
+    navigate("/signin");
   };
 
   return (
     <>
       <div className="form">
         <h1>Sign-Up</h1>
-        <form>
+        <form
+          onSubmit={() => {
+            onSubmission();
+          }}
+        >
           <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Name
-            </label>
+            <label className="form-label">Name</label>
             <input
               type="email"
+              value={name}
               className="form-control"
-              id="exampleInputEmail1"
               aria-describedby="emailHelp"
               onChange={(e) => {
                 setName(e.target.value);
@@ -37,13 +38,11 @@ export default function SignUp() {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Email address
-            </label>
+            <label className="form-label">Email address</label>
             <input
               type="email"
               className="form-control"
-              id="exampleInputEmail1"
+              value={email}
               aria-describedby="emailHelp"
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -59,6 +58,7 @@ export default function SignUp() {
             </label>
             <input
               type="password"
+              value={password}
               className="form-control"
               id="exampleInputPassword1"
               onChange={(e) => {
@@ -67,12 +67,15 @@ export default function SignUp() {
             />
           </div>
 
-          <button
+          <span
             className="btn btn-primary"
-            onClick={() => onSubmission()}
+            onClick={() => {
+              onSubmission();
+              navigate("/signin");
+            }}
           >
             Submit
-          </button>
+          </span>
         </form>
       </div>
     </>
