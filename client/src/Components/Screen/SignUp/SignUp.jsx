@@ -9,22 +9,42 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassWord] = useState("");
 
-  const Data = { name, email, password };
-
-  const onSubmission = (e) => {
-    console.log("form submitted with data", Data);
-    navigate("/signin");
+  const postData = () => {
+    if (!name || !email || !password) {
+      console.log("something is missing");
+      return;
+    }
+    fetch("/signup", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        password,
+        email,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          console.log(data);
+          console.log(data.error);
+        } else {
+          console.log(data);
+          navigate("/signin");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
     <>
       <div className="form">
         <h1>Sign-Up</h1>
-        <form
-          onSubmit={() => {
-            onSubmission();
-          }}
-        >
+        <form>
           <div className="mb-3">
             <label className="form-label">Name</label>
             <input
@@ -70,8 +90,7 @@ export default function SignUp() {
           <span
             className="btn btn-primary"
             onClick={() => {
-              onSubmission();
-              navigate("/signin");
+              postData();
             }}
           >
             Submit
