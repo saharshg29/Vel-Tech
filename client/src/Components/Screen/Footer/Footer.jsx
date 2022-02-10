@@ -1,5 +1,4 @@
 import React from "react";
-
 export default function Footer() {
   return (
     <div>
@@ -11,33 +10,30 @@ export default function Footer() {
               href="#!"
               role="button"
             >
-              <i className="fab fa-facebook-f"></i>
+              <i class="bi bi-facebook"></i>{" "}
             </span>
-
             <span
               className="btn btn-outline-light btn-floating m-1"
               href="#!"
               role="button"
             >
-              <i className="fab fa-twitter"></i>
+              <i class="bi bi-twitter"></i>
             </span>
-
             <span
               className="btn btn-outline-light btn-floating m-1"
               href="#!"
               role="button"
             >
-              <i className="fab fa-google"></i>
+              <i class="bi bi-google"></i>{" "}
             </span>
-
+            <i class="bi bi-instagram"></i>{" "}
             <span
               className="btn btn-outline-light btn-floating m-1"
               href="#!"
               role="button"
             >
-              <i className="fab fa-instagram"></i>
+              <i class="bi bi-instagram"></i>{" "}
             </span>
-
             <span
               className="btn btn-outline-light btn-floating m-1"
               href="#!"
@@ -45,7 +41,6 @@ export default function Footer() {
             >
               <i className="fab fa-linkedin-in"></i>
             </span>
-
             <span
               className="btn btn-outline-light btn-floating m-1"
               href="#!"
@@ -84,15 +79,6 @@ export default function Footer() {
                 </div>
               </div>
             </form>
-          </section>
-
-          <section className="mb-4">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              distinctio earum repellat quaerat voluptatibus placeat nam,
-              commodi optio pariatur est quia magnam eum harum corrupti dicta,
-              aliquam sequi voluptate quas.
-            </p>
           </section>
 
           <section className="">

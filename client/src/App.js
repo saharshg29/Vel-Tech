@@ -9,8 +9,11 @@ import Footer from "./Components/Screen/Footer/Footer";
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <div className="container-fluid">
+      <div className="sticky-top">
+        <Navbar />
+      </div>
+
+      <div className="container-fluid m">
         <div className="row">
           <div className="col-md bg-primary">
             this is Left navigation panel{" "}
