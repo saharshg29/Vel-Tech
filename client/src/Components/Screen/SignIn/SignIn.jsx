@@ -6,12 +6,12 @@ import "./signin.css";
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassWord] = useState("");
-  const Data = { email, password };
   const navigate = useNavigate();
 
   const postData = () => {
     if (!email || !password) {
       console.log("Enter all the details");
+      return;
     }
 
     fetch("/student-signin", {
@@ -31,17 +31,19 @@ export default function SignIn() {
         } else {
           localStorage.setItem("jwt", data.toke);
           localStorage.setItem("user", JSON.stringify(data.user));
+          console.log("Sign in Sucessfull");
+          navigate("/signup");
         }
-        console.log("Sign in Sucessfull");
-        navigate('/signup')
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    console.log("form submitted with data", Data);
   };
 
   return (
-    <div className="form">
+    <div>
       <h1>Sign-In</h1>
-      <form>
+      <form onSubmit={() => postData()}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Email address
@@ -73,13 +75,12 @@ export default function SignIn() {
           />
         </div>
 
-        <button
-          type="submit"
+        <span
           className="btn btn-primary"
           onClick={() => postData()}
         >
           Submit
-        </button>
+        </span>
       </form>
     </div>
   );
