@@ -86,14 +86,29 @@ export default function SignUp() {
             />
           </div>
 
-          <span
-            className="btn btn-primary"
-            onClick={() => {
-              postData();
-            }}
-          >
-            Submit
-          </span>
+          <div className="mb-3 position-relative">
+            <span
+              className="btn btn-primary position-absolute start-0"
+              onClick={() => {
+                postData();
+              }}
+            >
+              Submit
+            </span>
+            <br />
+            <br />
+            <div className="position-absolute start-50">
+              <label htmlFor="exampleInputPassword1" className="form-label">
+                Already have an account? 
+              </label>
+              <span
+                className="btn btn-primary"
+                onClick={() => navigate("/signin")}
+              >
+                Sign-In
+              </span>
+            </div>
+          </div>
         </form>
       </div>
     </>

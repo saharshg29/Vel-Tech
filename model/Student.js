@@ -36,11 +36,7 @@ const studentSchema = new mongoose.Schema({
             type: ObjectId,
             ref: Teachers,
         }
-    ],
-    Father: {
-        type: String,
-        default: null
-    }
+    ]
 })
 
 mongoose.model("Student", studentSchema)

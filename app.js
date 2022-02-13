@@ -16,18 +16,14 @@ mongoose.connect(DB)
     .catch(err => console.log(err))
 
 require('./model/Student')
+require('./model/Subject')
+require('./model/Teachers')
 
 app.use(cors())
 app.use(express.json())
 
 app.use(require('./controller/routes/auth'))
-
-
-app.get('/', (req, res) => {
-    res.send('Working properly')
-})
-
-
+app.use(require('./controller/routes/add_student'))
 
 
 app.listen(PORT, () => {
