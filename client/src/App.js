@@ -1,35 +1,36 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./Components/Screen/Nav/Navbar";
-import { Route, Routes } from "react-router-dom";
-import SignUp from "./Components/Screen/SignUp/SignUp";
-import SignIn from "./Components/Screen/SignIn/SignIn";
 import Footer from "./Components/Screen/Footer/Footer";
-import Admin from "./Components/Admin/Admin";
-import AddStudent from "./Components/Admin/AddStudent";
-import AddSubject from "./Components/Admin/AddSubject";
-import AddTeacher from "./Components/Admin/AddTeacher";
-
+import AllRoutes from "./AllRoutes";
+import { useLocation } from "react-router-dom";
 
 function App() {
+  //use This location for conditional rendering in left and right panel
+  let location = useLocation();
+
   return (
-    <div className="App">
-      <div className="sticky-top mb-2">
-        <Navbar />
+    <>
+      <div className="App">
+        <div className="sticky-top mb-2">
+          <Navbar />
+        </div>
+
+        <div className="container-fluid ">
+          <div className="row">
+            <div className="col-md bg-primary mr-1">
+            </div>
+            <div className="col-md-8">
+              <AllRoutes />
+            </div>
+            <div className="col-md bg-primary ml-1">right pannel</div>
+          </div>
+        </div>
+        <div className="sticky-bottom mt-2">
+          <Footer />
+        </div>
       </div>
-
-      <Routes>
-        <Route exact path="/admin" element={<Admin />}></Route>
-        <Route exact path="/signin" element={<SignIn />}></Route>
-        <Route exact path="/add-student" element={<AddStudent />}></Route>
-        <Route exact path="/add-teacher" element={<AddTeacher />}></Route>
-        <Route exact path="/add-subject" element={<AddSubject />}></Route>
-      </Routes>
-
-
-
-      <Footer />
-    </div>
+    </>
   );
 }
 
