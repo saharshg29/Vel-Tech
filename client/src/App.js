@@ -3,11 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./Components/Screen/Nav/Navbar";
 import Footer from "./Components/Screen/Footer/Footer";
 import AllRoutes from "./AllRoutes";
-import { useLocation } from "react-router-dom";
 
 function App() {
   //use This location for conditional rendering in left and right panel
-  let location = useLocation();
 
   return (
     <>
