@@ -4,6 +4,7 @@ import AddStudent from "./AddStudent";
 import AddSubject from "./AddSubject";
 import AddTeacher from "./AddTeacher";
 
+
 export default function Admin() {
   let location = useLocation();
   if (location.pathname === "admin/student") {

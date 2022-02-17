@@ -1,35 +1,20 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import Admin from "./Admin";
+import Student from "./Student";
+import Teacher from "./Teacher";
 
 export default function Left() {
   let location = useLocation();
-  let navigate = useNavigate();
 
   if (location.pathname.includes("/admin")) {
-    return (
-      <>
-        <span
-          onClick={() => navigate("/admin/student")}
-          className="btn m-2 btn-info"
-        >
-          Student
-        </span>
-        <br />
-        <span
-          onClick={() => navigate("/admin/teacher")}
-          className="btn m-2 btn-info"
-        >
-          Teacher
-        </span>
-        <br />
-        <span
-          onClick={() => navigate("/admin/subject")}
-          className="btn m-2 btn-info"
-        >
-          Subject
-        </span>
-      </>
-    );
+    return <Admin />;
+  }
+  if (location.pathname.includes("/student")) {
+    return <Student />;
+  }
+  if (location.pathname.includes("/teacher")) {
+    return <Teacher />;
   }
   return <div>Left</div>;
 }
