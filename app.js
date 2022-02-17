@@ -4,7 +4,7 @@ const cors = require('cors')
 const URI = require('./controller/KEYS')
 const app = express()
 const PORT = process.env.PORT || 5000;
-const student = require('./controller/routes/add_student')
+const student = require('./controller/routes/student')
 
 
 // ------------------------CONNECTION WITH MONGO DB 
