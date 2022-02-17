@@ -14,9 +14,9 @@ export default function AllRoutes() {
         <Route exact path="/admin" element={<Admin />}></Route>
         <Route exact path="/signin" element={<SignIn />}></Route>
         <Route exact path="/signup" element={<SignUp />}></Route>
-        <Route exact path="/admin/student" element={<AddStudent />}></Route>
-        <Route exact path="/admin/teacher" element={<AddTeacher />}></Route>
-        <Route exact path="/admin/subject" element={<AddSubject />}></Route>
+        <Route exact path="/admin/student/add" element={<AddStudent />}></Route>
+        <Route exact path="/admin/teacher/add" element={<AddTeacher />}></Route>
+        <Route exact path="/admin/subject/add" element={<AddSubject />}></Route>
       </Routes>
     </div>
   );

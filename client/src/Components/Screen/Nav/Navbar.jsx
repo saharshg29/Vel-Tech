@@ -20,7 +20,7 @@ export default function Navbar() {
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
-            aria-expanded="false"
+            aria-expanded="true"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
@@ -49,6 +49,20 @@ export default function Navbar() {
                 <span className="nav-link" href="#">
                   <NavLink to="/admin" end>
                     Admin
+                  </NavLink>
+                </span>
+              </li>
+              <li className="nav-item">
+                <span className="nav-link" href="#">
+                  <NavLink to="/teacher" end>
+                    Teacher
+                  </NavLink>
+                </span>
+              </li>
+              <li className="nav-item">
+                <span className="nav-link" href="#">
+                  <NavLink to="/student" end>
+                    Student
                   </NavLink>
                 </span>
               </li>
