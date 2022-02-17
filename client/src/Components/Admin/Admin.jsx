@@ -1,30 +1,28 @@
 import React from "react";
 import Left from "./Left";
-
-import { Route, Routes, useLocation } from "react-router-dom";
+import Routing from "./Routing";
+import { useLocation } from "react-router-dom";
+import AddStudent from "./AddStudent";
+import AddSubject from "./AddSubject";
+import AddTeacher from "./AddTeacher";
 
 export default function Admin() {
   let location = useLocation();
+  if (location.pathname === "admin/student") {
+    return <AddStudent />;
+  } else if (location.pathname === "/admin/teacher") {
+    return <AddSubject />;
+  } else if (location.pathname === "/admin/subject") {
+    return <AddTeacher />;
+  }
   return (
     <>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md bg-primary mr-1">
-            <Left />
-          </div>
-          <div className="col-md-8 h-50 ">
-            <h1>Admin</h1>
-            <br />
-            <h3>This is the Admin section.</h3>
-            <br />
-            <h4>
-              Here you can perform all sort of <b>CRUD</b> actions
-            </h4>
-          </div>
-          <div className="col-md bg-primary ml-1">
-          </div>
+          <h1>Admin</h1>
+          <h3>This is admin panel</h3>
         </div>
-      </div>{" "}
+      </div>
       {console.log("render hua")}
     </>
   );
