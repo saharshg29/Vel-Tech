@@ -3,8 +3,8 @@ const model = require('../../model/Student')
 
 const student = express.Router()
 
-
 //--------------------- CREATE ---------------------
+
 student.post('/add', (req, res) => {
 
     let { name, email, password, YOE } = req.body;
@@ -16,8 +16,8 @@ student.post('/add', (req, res) => {
         .catch(err => console.error(err))
 })
 
-
 //--------------------- READ ---------------------
+
 student.get('/view/:id', (req, res) => {
 
     const id = req.params.id;
@@ -30,6 +30,7 @@ student.get('/view/:id', (req, res) => {
 
 
 //---------------------- UPDATE ---------------------
+
 student.patch('/edit/:id', (req, res) => {
     
     const id = req.params.id;
@@ -51,6 +52,7 @@ student.patch('/edit/:id', (req, res) => {
 
 
 //---------------------- DELETE ---------------------
+
 student.delete('/delete/:id', (req, res) => {
 
     const id = req.params.id;

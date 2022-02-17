@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const { ObjectId } = mongoose.Schema.Types
-
+const Subject = require('./Subject')
 
 const TeachersSchema = new mongoose.Schema({
     name: {
@@ -15,14 +15,17 @@ const TeachersSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Department: [{
-        type: String,
-        required: true
+    department: [{
+        type: ObjectId,
+        ref: Subject
     }],
-    Designation: [{
+    designation: {
         type: String,
-        required: true
-    }]
+        required: true,
+        default: null
+    }
 })
 
-mongoose.model("Teachers", TeachersSchema)
+const teacherModel = mongoose.model("Teacher", TeachersSchema) 
+
+exports.Teacher = teacherModel
