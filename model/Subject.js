@@ -16,11 +16,7 @@ const subjectSchema = new mongoose.Schema({
             type: ObjectId,
             ref: Teachers
         }
-    ],
-    HoD: {
-        type: ObjectId,
-        ref: Teachers
-    }
+    ]
 })
 
 mongoose.model("Subject", subjectSchema)
