@@ -1,6 +1,6 @@
 {
-  "name": "client",
   "homepage": "https://saharshg29.github.io/VelTech",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:5000",
