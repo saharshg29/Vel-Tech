@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.56b312fc.css",
-    "main.js": "/static/js/main.145a73f5.js",
-    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
-    "index.html": "/index.html",
-    "main.56b312fc.css.map": "/static/css/main.56b312fc.css.map",
-    "main.145a73f5.js.map": "/static/js/main.145a73f5.js.map",
-    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+    "main.css": "/VelTech/static/css/main.56b312fc.css",
+    "main.js": "/VelTech/static/js/main.ceb53e46.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/VelTech/static/js/787.c4e7f8f9.chunk.js",
+    "index.html": "/VelTech/index.html",
+    "main.56b312fc.css.map": "/VelTech/static/css/main.56b312fc.css.map",
+    "main.ceb53e46.js.map": "/VelTech/static/js/main.ceb53e46.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/VelTech/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.56b312fc.css",
-    "static/js/main.145a73f5.js"
+    "static/js/main.ceb53e46.js"
   ]
 }
