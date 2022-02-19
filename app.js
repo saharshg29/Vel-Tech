@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const cors = require('cors')
-const URI = require('./controller/KEYS')
 const app = express()
+const URI = require('./controller/KEYS')
 const PORT = process.env.PORT || 5000;
 
 
@@ -12,9 +12,10 @@ const teacher = require('./controller/routes/teacher')
 
 
 // ------------------------CONNECTION WITH MONGO DB 
+
 const DB = URI.URI
 
-mongoose.connect(DB)
+mongoose.connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connected to MongoDB')
     })
