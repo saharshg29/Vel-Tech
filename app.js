@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5000;
 // ----------------------- ROUTES -----------------------
 const student = require('./controller/routes/student')
 const teacher = require('./controller/routes/teacher')
+const subject = require('./controller/routes/subject')
 
 
 // ------------------------CONNECTION WITH MONGO DB 
@@ -26,6 +27,7 @@ app.use(express.json())
 
 app.use('/student', student)
 app.use('/teacher', teacher)
+app.use('/subject', subject)
 
 
 app.listen(PORT, () => {

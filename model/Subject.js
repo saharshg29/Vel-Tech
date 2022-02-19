@@ -19,4 +19,6 @@ const subjectSchema = new mongoose.Schema({
     ]
 })
 
-mongoose.model("Subject", subjectSchema)
+const subjectModel = mongoose.model("Subject", subjectSchema)
+
+exports.Subject = subjectModel
