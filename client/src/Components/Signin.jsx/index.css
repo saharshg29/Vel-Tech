@@ -1,0 +1,74 @@
+.SignIn {
+  border-radius: 2px;
+  border-style: solid;
+  border-color: #222;
+  border-width: 3px;
+  height: 467px;
+  width: 300px;
+  position: relative;
+  left: 40%;
+  margin: 10vh 20vh;
+}
+
+.fields {
+  position: absolute;
+}
+
+.logo {
+  background-color: #4fc7b1;
+  height: 150px;
+  width: 100%;
+}
+
+.username {
+  font-weight: bold;
+  margin: 23px;
+  color: #444;
+}
+
+.password {
+  font-weight: bold;
+  margin: 23px;
+  color: #444;
+}
+
+.username input {
+  max-width: fit-content;
+  border: 2px solid #aaa;
+  border-radius: 17px;
+  height: 8px;
+  padding: 9px;
+}
+
+.password input {
+  max-width: fit-content;
+  border: 2px solid #aaa;
+  border-radius: 17px;
+  height: 8px;
+  padding: 9px;
+}
+
+.button {
+  border: 2px solid #aaa;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 4px 10px;
+  width: max-content;
+  color: #251;
+  font-weight: bold;
+  display: block;
+}
+
+span {
+  display: block;
+  font-weight: 500;
+  /* border-bottom: 2px solid; */
+  /* border-color: #21e; */
+  color: #21e;
+  margin: 22px auto;
+  width: max-content;
+  padding: 8px;
+}
+
+
+span :
