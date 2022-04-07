@@ -1,6 +1,8 @@
 import "./index.css";
+import { useNavigate, Link } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="SignIn">
@@ -19,9 +21,14 @@ const SignIn = () => {
               id=""
             />
           </div>
-          <div className="button">Log In!</div>
+          <div onClick={() => navigate("/signup")} className="button">
+            Log In!
+          </div>
 
-          <span>Forget Password?</span>
+          <span onClick={() => navigate("/forgetpass")}>Forget Password?</span>
+          <span>
+            <Link to="/signup">Don't have an account??</Link>
+          </span>
         </div>
       </div>
     </>
