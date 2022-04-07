@@ -1,5 +1,4 @@
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./Components/Screen/Nav/Navbar";
 import Footer from "./Components/Screen/Footer/Footer";
 import AllRoutes from "./AllRoutes";
