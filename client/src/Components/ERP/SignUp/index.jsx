@@ -5,7 +5,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="SignIn">
+      <div className="SignUp">
         <div className="fields">
           <div className="logo"></div>
           <div className="username">
