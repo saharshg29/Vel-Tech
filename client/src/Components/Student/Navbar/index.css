@@ -1,0 +1,48 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.navbar {
+  position: relative;
+  width: auto;
+  height: 8vh;
+  background-color: blueviolet;
+  border: 2px solid rgb(192, 205, 53);
+  padding: 3vh;
+}
+
+.veltech {
+  position: absolute;
+  left: 0px;
+  color: #fff;
+}
+
+.menu {
+  position: absolute;
+  right: 0px;
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+  margin: -6%;
+  padding: 0px;
+}
+
+li {
+  float: left;
+}
+
+li span {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.buttonlogout {
+  border: 2px solid sandybrown;
+  border-radius: 40px;
+}
